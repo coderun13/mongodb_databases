@@ -1,3 +1,11 @@
 The Shell
 mongosh (to start)
-use
+
+BSON Data(Binary JSON)
+
+disadvantages of JSON 
+Text Based
+space inefficient
+
+Documenet: Mongo stores data in form of documents(BSON docs)
+Collection: MongoDB stores documents in collections.
