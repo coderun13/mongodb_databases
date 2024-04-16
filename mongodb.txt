@@ -25,5 +25,8 @@ db.(name of collection).findOne({})
 QUERY OPERATORS
 db.collection.find({city:{$in["delhi","mumbai"]}})
 
+UPDATE IN DB
+db.(name of collection).updateOne()
+
 
 
