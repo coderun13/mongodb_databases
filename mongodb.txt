@@ -9,3 +9,21 @@ space inefficient
 
 Documenet: Mongo stores data in form of documents(BSON docs)
 Collection: MongoDB stores documents in collections.
+
+TO SHOW DATABASE
+show (name of table)
+show db
+
+INSERT IN DB
+db.(name of collection).insertOne({data})
+db.(name of collection).insertMny([{}])
+
+FIND IN DB
+db.(name of collection).find()
+db.(name of collection).findOne({})
+
+QUERY OPERATORS
+db.collection.find({city:{$in["delhi","mumbai"]}})
+
+
+
