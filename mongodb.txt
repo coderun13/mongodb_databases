@@ -59,3 +59,6 @@ Const User = mongoose.model("User",userSchema);
 to test save in memory or not
 node in terminal then
 .load index.js 
+
+Mongoose uses Operating Buffering 
+(start models immediately,without waiting for mongoose to establish a connection to MongoDB)
