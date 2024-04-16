@@ -68,3 +68,6 @@ Model.find() //returns a query object
 
 Model.findOne() //return single result
 Model.findByID() //commonly used
+
+UPDATE 
+Model.updateOne()
