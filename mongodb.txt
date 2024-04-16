@@ -62,3 +62,9 @@ node in terminal then
 
 Mongoose uses Operating Buffering 
 (start models immediately,without waiting for mongoose to establish a connection to MongoDB)
+
+FIND OPERATION
+Model.find() //returns a query object
+
+Model.findOne() //return single result
+Model.findByID() //commonly used
