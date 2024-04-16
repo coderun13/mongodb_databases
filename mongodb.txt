@@ -71,3 +71,12 @@ Model.findByID() //commonly used
 
 UPDATE 
 Model.updateOne()
+Model.findOneAndUpdate()
+Model.findByIdAndUpdate()
+
+DELETE
+Model.deleteOne()
+Model.deleteMany()
+Model.findOneAndDelete()
+Model.findByIdAndDelete()
+
