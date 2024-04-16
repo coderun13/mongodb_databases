@@ -28,5 +28,12 @@ db.collection.find({city:{$in["delhi","mumbai"]}})
 UPDATE IN DB
 db.(name of collection).updateOne()
 
+DELETE IN DB
+db.(name of collection).deleteOne()
+db.(name of collection).deleteMany()
+db.dropDatabase()
+
+
+
 
 
