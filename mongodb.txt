@@ -33,7 +33,24 @@ db.(name of collection).deleteOne()
 db.(name of collection).deleteMany()
 db.dropDatabase()
 
+MONGOOSE
+A library that creates a connection between MongoDB and Node.js Javascript Runtime environment
+It is an ODM(Object Modeling) library.
 
+INSTALLATION
+npm i MONGOOSE
 
+Schema
+It defines the shape of the documentation within that collection
+
+SYNTAX
+const userSchema = new mongoose.schema({
+---------values---------
+---------values---------
+});
+
+MODELS
+Model in mongoose is a class with which we construct documents.
+Const User = mongoose.model("User",userSchema);
 
 
