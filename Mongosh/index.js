@@ -44,7 +44,17 @@ user2
         console.log(err);
     });
 
+User.find({}).then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
+});
 
 
+User.find({age: {$gt: 30}})
+.then((res)=>{
+    console.log(res[0].name);
+}).catch((err)=>{
+    console.log(err);
+});
 
-    
