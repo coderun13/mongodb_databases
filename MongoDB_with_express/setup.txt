@@ -1,0 +1,19 @@
+MONGODB WITH EXPRESS
+(Backend With Database)
+
+require modules
+create app
+require path
+
+define path
+
+port setup 
+
+connection setup
+
+root checking
+
+define Schema
+
+data entering
+data saving
