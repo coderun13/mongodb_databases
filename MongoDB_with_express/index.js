@@ -7,6 +7,8 @@ const Chat = require("./Models/chat.js");
 
 app.set("view engine", "ejs"); //path define
 app.set("views",path.join(__dirname, "/views")); //path define
+//app.use(express.static("public")); //path for public folder
+app.use(express.static(path.join(__dirname,"/public")));
 
 
 main().then(()=>{
@@ -17,6 +19,7 @@ main().then(()=>{
 async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/chatup"); //require mongoose
   }
+
 
 let chat1 = new Chat({
     from:"snehal",
@@ -30,6 +33,15 @@ chat1.save().then((res)=> {
 });
 
 
+//Index route
+
+app.get("/chats",async(req,res)=> {
+    let chats = await Chat.find();
+    console.log(chats);
+    res.render("index.ejs",{chats});
+});
+
+
 app.get("/",(req,res) => {
     res.send("root is working"); //connection setup
 });
@@ -38,9 +50,6 @@ app.get("/",(req,res) => {
 app.listen(3000, () => {
     console.log("server is listening on port 3000"); //port setup
 });
-
-
-
 
 
 

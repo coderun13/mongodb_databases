@@ -17,3 +17,7 @@ define Schema
 
 data entering
 data saving
+
+Initialising data
+
+Creating Routes
