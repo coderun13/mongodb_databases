@@ -3,9 +3,13 @@ Relation between different models.
 SQL Relationship
 (via Foreign Keys)
 
-One to One 
+One to One (1*1) 
+One to Many (1*n)
+Many to Many (n*n)
+
+Mongo Relationships
+
+Mongo Relationships
 One to Many
-Many to Many
-
-
+(Store The child document inside parent)
 
