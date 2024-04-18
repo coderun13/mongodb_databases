@@ -7,9 +7,9 @@ One to One (1*1)
 One to Many (1*n)
 Many to Many (n*n)
 
-Mongo Relationships
 
 Mongo Relationships
-One to Many
+
+One to Many(approach 1(one to few))
 (Store The child document inside parent)
 
