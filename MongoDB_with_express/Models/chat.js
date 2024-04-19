@@ -1,19 +1,19 @@
 const mongoose = require("mongoose"); //reqiure mongoose
 
 const chatSchema = new mongoose.Schema({
-    from: {
+    from : {
         type: String,
         required: true,
     },
-    to: {
+    to : {
         type: String,
         required: true,
     }, 
-    msg: {
+    msg : {
         type: String,
         maxlength: 50,
     },
-    created_at: {
+    created_at : {
         type: Date,
         required: true,
     },

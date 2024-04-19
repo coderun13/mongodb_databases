@@ -45,7 +45,7 @@ app.get("/chats",async(req,res)=> {
 
 //New Route
 
-app.get("/chats/new/",(req,res)=> {
+app.get("/chats/new",(req,res)=> {
     res.render("new.ejs");
 });
     
@@ -64,10 +64,10 @@ app.get("/chats/new/",(req,res)=> {
 //saving new chat (async function)
 //(when 'then' is used 'async' is not needed)
     newChat.save()
-    .then(res => {
-        console.log("chat was saved")
+    .then((res) => {
+        console.log("chat was saved");
     })
-    .catch(err => {
+    .catch((err) => {
         console.log(err);
     });
 
