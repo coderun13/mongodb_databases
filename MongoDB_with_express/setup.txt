@@ -24,3 +24,6 @@ Creating Routes
 
 Adding html and css files
 
+to use Date
+<%= chat.created_at.tostring().split(" ")[4] %> <br />
+<%= chat.created_at.tostring().split(" ").slice(0,4).join(" ") %> <br />
