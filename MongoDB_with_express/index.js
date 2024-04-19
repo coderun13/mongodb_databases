@@ -61,6 +61,18 @@ app.get("/chats/new/",(req,res)=> {
        // console.log(newChat);
         //res.send("working");
 
+//saving new chat (async function)
+//(when 'then' is used 'async' is not needed)
+    newChat.save()
+    .then(res => {
+        console.log("chat was saved")
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
+    res.redirect("/chats");
+});
 
 
 app.get("/",(req,res) => {
