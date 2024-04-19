@@ -1,21 +1,29 @@
-const express = require("express"); //require express
-const app = express(); //creating app
-const mongoose = require("mongoose"); //reqiure mongoose
-const path = require("path"); //require path
+const express = require("express");  //require express
+
+const app = express();  //creating app
+
+const mongoose = require("mongoose");  //reqiure mongoose
+
+const path = require("path");  //require path
+
 const Chat = require("./Models/chat.js");
 //const newChat = require("./Models/chat.js");
+
 const methodOverride = require('method-override')
 
-app.set("view engine", "ejs"); //path define
-app.set("views",path.join(__dirname, "/views")); //path define
-
-//app.use(express.static("public")); //path for public folder
+app.set("view engine", "ejs");  //path define
+app.set("views",path.join(__dirname, "/views"));  //path define
+ 
+//app.use(express.static("public"));  //path for public folder
 app.use(express.static(path.join(__dirname,"/public")));
-app.use(express.urlencoded ({ extended : true })); //standard line //middleware
-app.use(methodOverride('_method'))//method override
+
+app.use(express.urlencoded ({ extended : true }));  //standard line //middleware
+
+app.use(methodOverride('_method')) //method override
 
 
-main().then(()=>{
+main()
+    .then(()=>{
     console.log("connection successful"); //connection setup
     })
     .catch((err) => console.log(err));
@@ -75,10 +83,11 @@ app.get("/chats/new",(req,res)=> {
     });
 
     res.redirect("/chats");
-});
+    });
 
 
 //Edit Route
+
 app.get("/chats/:id/edits",async (req,res) =>{
     let {id } = req.params;
     let chat = await Chat.findById(id);
@@ -87,6 +96,7 @@ app.get("/chats/:id/edits",async (req,res) =>{
 
 
 //Update Route
+
 app.put("/chats/:id",async (req,res)=> { //put request
     let {id} = req.params;
     let {msg: newMsg} = req.body;
@@ -102,6 +112,7 @@ app.put("/chats/:id",async (req,res)=> { //put request
 
 
 //Destry Route
+
 app.delete("/chats/:id",async (req,res)=> { //delete request
     let {id} = req.params;
     let deletedChat= await Chat.findByIdAndDelete(id);
