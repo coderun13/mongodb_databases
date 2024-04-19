@@ -21,3 +21,6 @@ data saving
 Initialising data
 
 Creating Routes
+
+Adding html and css files
+

@@ -3,12 +3,14 @@ const app = express(); //creating app
 const mongoose = require("mongoose"); //reqiure mongoose
 const path = require("path"); //require path
 const Chat = require("./Models/chat.js");
-
+//const newChat = require("./Models/chat.js");
 
 app.set("view engine", "ejs"); //path define
 app.set("views",path.join(__dirname, "/views")); //path define
+
 //app.use(express.static("public")); //path for public folder
 app.use(express.static(path.join(__dirname,"/public")));
+app.use(express.urlencoded ({ extended : true })); //standard line //middleware
 
 
 main().then(()=>{
@@ -41,6 +43,25 @@ app.get("/chats",async(req,res)=> {
     res.render("index.ejs",{chats});
 });
 
+//New Route
+
+app.get("/chats/new/",(req,res)=> {
+    res.render("new.ejs");
+});
+    
+//Create Route
+    app.post("/chats",(req,res)=> {
+        let {from, to, msg} =  req.body;
+        let newChat = new Chat({
+            from: from,
+            to: to,
+            msg: msg,
+            created_at: new Date(),
+        });
+       // console.log(newChat);
+        //res.send("working");
+
+
 
 app.get("/",(req,res) => {
     res.send("root is working"); //connection setup
@@ -50,6 +71,9 @@ app.get("/",(req,res) => {
 app.listen(3000, () => {
     console.log("server is listening on port 3000"); //port setup
 });
+
+
+
 
 
 
