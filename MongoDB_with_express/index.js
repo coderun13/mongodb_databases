@@ -101,6 +101,18 @@ app.put("/chats/:id",async (req,res)=> { //put request
 });
 
 
+//Destry Route
+app.delete("/chats/:id",async (req,res)=> { //delete request
+    let {id} = req.params;
+    let deletedChat= await Chat.findByIdAndDelete(id);
+    console.log(deletedChat);
+    res.redirect("/chats");
+});
+
+
+app.get("/",(req,res) => {
+    res.send("root is working"); //connection setup
+});
 
 app.listen(3000, () => {
     console.log("server is listening on port 3000"); //port setup
