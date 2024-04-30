@@ -1,0 +1,9 @@
+Using Mongoose Middleware
+(2 middlewares can be used)
+
+Pre- run efore the query is executed
+Post- run after the query is executed
+
+findByIdAndDelete ---> findOneAndDelete ---> pre
+
+
