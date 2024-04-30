@@ -104,7 +104,7 @@ await newCust.save();
 console.log("added new customer");
 };
 
-//function call
+//function call to add new customer data
 addCust();
 
 //deleting customer by id
@@ -113,5 +113,5 @@ addCust();
     console.log(data);
 };*/
 
-//function call
+//function call to delete data of customer
 //delCust();
