@@ -39,6 +39,14 @@ async function main() {
     ],
 });
 
+
+
+customerSchema.post("findOneAndDelete", async() =>{
+    console.log("POST MIDDLEWARE");
+});
+
+
+
 //creating models
 const Order = mongoose.model("Order", orderSchema);
 const customer = mongoose.model("Customer",customerSchema);
