@@ -29,6 +29,31 @@ async function main() {
 const User = mongoose.model("User", userSchema);
 const Post = mongoose.model("Post",postSchema);
 
+/*const getData = async () =>{
+    let result = await Post.findOne({}).populate("user","username");
+    console.log(result);
+};
+
+getData();*/
+
+//adding data
+const addData = async () =>{
+    let user = await User.findOne({username: "snehalsingh"});
+        
+         /*let user1 = new User({
+        username: "snehalsingh",
+        email: "snehal01@gmail.com", //already created in database
+    });
+
+    let post1 = new Post({
+        content: "Hello World!",
+        likes: 7
+    });*/
+
+    let post2 = new Post({
+        content: "Bye Bye!",
+        likes: 3
+    });
 
 
 
