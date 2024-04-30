@@ -66,8 +66,6 @@ const addData = async () =>{
     await post2.save();
 }
 
-
-
-
-
+//function calling
+addData();
 
