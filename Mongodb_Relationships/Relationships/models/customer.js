@@ -95,3 +95,11 @@ console.log("added new customer");
 
 //function call
 addCust();
+
+//deleting customer by id
+/*const delCust = async ()=>{
+    let data = await customer.findByIdAndDelete("6630ce4af6343761facd24bd");
+    console.log(data);
+};*/
+
+//delCust();
