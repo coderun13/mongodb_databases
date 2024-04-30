@@ -25,7 +25,12 @@ async function main() {
     }
   });
 
- 
+  //creating models
+const User = mongoose.model("User", userSchema);
+const Post = mongoose.model("Post",postSchema);
+
+
+
 
 
 
