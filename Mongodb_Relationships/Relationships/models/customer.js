@@ -42,6 +42,12 @@ async function main() {
 const Order = mongoose.model("Order", orderSchema);
 const customer = mongoose.model("Customer",customerSchema);
 
+const findcustomer = async () => {
+    let result = await customer.find({}).populate("orders");
+    console.log(result[0]);
+};
+findcustomer();
+
 //customer data
 const addcustomer = async () => {
     let cust1 = new customer({
@@ -62,3 +68,31 @@ console.log(result);
 
 //function call
 addcustomer();
+
+
+/*Functions
+const findCustomer = async() => {
+    let result = await customer.find({}).populate("orders");
+    console.log(result[0]);
+};
+
+
+const addCust = async () => {
+    let newCust = new customer({
+        name: "snehal singh"
+    });
+    let newOrder = new Order({
+        item:"burger",
+        price: "250"
+    });
+
+newCust.orders.push(newOrder);
+
+await newOrder.save();
+await newCust.save();
+
+console.log("added new customer");
+
+}
+
+addCust();*/
