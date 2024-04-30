@@ -113,4 +113,5 @@ addCust();
     console.log(data);
 };*/
 
+//function call
 //delCust();
