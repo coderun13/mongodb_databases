@@ -15,7 +15,17 @@ async function main() {
     email:String
   });
 
+  //post Schema
+  const postSchema = new Schema({
+    content: String,
+    likes: Number,
+    user: {
+        type: Schema.Types.ObjectId,
+            ref:"User"
+    }
+  });
 
+ 
 
 
 
