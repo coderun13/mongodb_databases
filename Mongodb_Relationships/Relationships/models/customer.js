@@ -39,14 +39,9 @@ async function main() {
     ],
 });
 
+//creating models
 const Order = mongoose.model("Order", orderSchema);
 const customer = mongoose.model("Customer",customerSchema);
-
-const findcustomer = async () => {
-    let result = await customer.find({}).populate("orders");
-    console.log(result[0]);
-};
-findcustomer();
 
 //customer data
 const addcustomer = async () => {
@@ -70,13 +65,17 @@ console.log(result);
 addcustomer();
 
 
-/*Functions
-const findCustomer = async() => {
+//functions
+const findcustomer = async () => {
     let result = await customer.find({}).populate("orders");
     console.log(result[0]);
 };
 
+//function call
+findcustomer();
 
+
+//adding new customer and order
 const addCust = async () => {
     let newCust = new customer({
         name: "snehal singh"
@@ -92,7 +91,7 @@ await newOrder.save();
 await newCust.save();
 
 console.log("added new customer");
+};
 
-}
-
-addCust();*/
+//function call
+addCust();
