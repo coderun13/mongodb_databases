@@ -9,7 +9,14 @@ async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/relationdemo"); //require mongoose
   }
 
-  
+  //user Schema
+  const userSchema = new Schema({
+    username: String,
+    email:String
+  });
+
+
+
 
 
 
