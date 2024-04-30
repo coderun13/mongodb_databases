@@ -10,6 +10,12 @@ Many to Many (n*n)
 
 Mongo Relationships
 
-One to Many(approach 1(one to few))
+One to Many
+(approach 1(one to few))
 (Store The child document inside parent)
+(Populate)(gives full detail as object rather than only id)
 
+One to Many
+(Approach 3(one to squillions))
+(Store a reference to the parent document inside child)
+eg- user of the post(parent of the child)
