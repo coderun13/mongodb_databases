@@ -39,8 +39,12 @@ async function main() {
     ],
 });
 
+//middleware (pre)
+customerSchema.pre("findOneAndDelete" , async() => {
+    console.log("PRE MIDDLEWARE");
+});
 
-
+//middleware (post)
 customerSchema.post("findOneAndDelete", async() =>{
     console.log("POST MIDDLEWARE");
 });
