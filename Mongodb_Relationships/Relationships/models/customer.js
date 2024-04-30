@@ -15,10 +15,8 @@ async function main() {
     price: Number,
   });
 
-  const Order = mongoose.model("Order", orderSchema);
-
   //adding data
-  const addOrders = async () => {
+  /*const addOrders = async () => {
    let res =  await Order.insertMany(
     [
         { item:"samosa", price: 12},
@@ -28,6 +26,39 @@ async function main() {
         console.log(res);
   };
 
-  addOrders();
+  addOrders();*/
 
+  //customer schema
+ const customerSchema= new Schema({
+    name: String,
+    orders: [
+        {
+            type: Schema.Types.ObjectId,
+            ref:"Order",
+        },
+    ],
+});
 
+const Order = mongoose.model("Order", orderSchema);
+const customer = mongoose.model("Customer",customerSchema);
+
+//customer data
+const addcustomer = async () => {
+    let cust1 = new customer({
+        name: "aryan singh"
+    });
+
+let order1 = await Order.findOne({item: "chips"});
+let order2 = await Order.findOne({item: "chocolate"});
+
+//pushing data in database
+cust1.orders.push(order1);
+cust1.orders.push(order2);
+
+//saving and printing on console
+let result = await cust1.save();
+console.log(result);
+};
+
+//function call
+addcustomer();
