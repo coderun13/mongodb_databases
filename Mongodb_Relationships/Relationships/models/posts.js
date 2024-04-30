@@ -56,6 +56,17 @@ const addData = async () =>{
     });
 
 
+   // post1.user = user1;
+   post2.user = user;
+
+    //saving data to database
+
+   // await user1.save();
+    //await post1.save();
+    await post2.save();
+}
+
+
 
 
 
